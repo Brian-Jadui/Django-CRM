@@ -1,0 +1,18 @@
+{% extends 'base.html '%}
+
+{% block content %}
+<form method="POST" action="{% url 'delete-record' record.id %}">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+     Deleting {{record}}, Are you sure?
+    </div>
+    <br/>
+    <a href="{% url 'view-record' record.id %}" class="btn btn-primary">Go Back</a>
+
+    <button type="submit" class="btn btn-secondary">Confirm</button>
+</form>
+
+
+
+{% endblock %}

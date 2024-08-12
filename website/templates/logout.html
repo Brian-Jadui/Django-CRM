@@ -1,0 +1,11 @@
+{% extends 'base.html '%}
+
+{% block content %}
+<h3>Sure you want to log out?</h3>
+
+<form method="POST" action="{% url 'logout' %}">
+    {% csrf_token%}
+    <button  class="btn btn-secondary"><a class="nav-link" href="{% url 'home' %}">Go Back</a></button>
+    <button type="submit" class="btn btn-secondary">Confirm</button>
+</form>
+{% endblock %}
